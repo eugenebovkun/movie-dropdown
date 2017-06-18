@@ -1,0 +1,7 @@
+<div class="movie-list">
+  <h2>Please select one of most famous film:</h2>
+  <app-dropdown
+    [items]="movies"
+    (onItemSelected)="onMovieSelected($event)"
+  ></app-dropdown>
+</div>

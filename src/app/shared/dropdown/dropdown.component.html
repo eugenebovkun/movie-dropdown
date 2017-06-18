@@ -1,0 +1,26 @@
+<span class="dropdown__title "
+      [class.dropdown__title--open]="isExpanded"
+      (click)="toggleDropdown()">
+  Movie: {{selectedItem?.title}}
+</span>
+<ul class="dropdown__list"
+    [class.dropdown__list--open]="isExpanded">
+  <li  class="dropdown__list-item"
+       *ngFor="let item of items"
+       (click)="selectItem(item)">
+    <span>{{item.title}}</span>
+  </li>
+  <li *ngIf="items?.length === 0">
+    List is empty, there is no options to show.
+  </li>
+  <li *ngIf="!items">
+    There is no list to show.
+  </li>
+
+</ul>
+<div class="text-right dropdown__clear">
+  <a *ngIf="!!selectedItem"
+     (click)="clearSelection()">
+    Clear
+  </a>
+</div>
